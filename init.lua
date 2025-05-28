@@ -5,7 +5,10 @@ require("hackerinotopolino")
 
 vim.api.nvim_create_autocmd("UiEnter", {
   callback = function(data)
-    vim.cmd("cd " .. vim.fn.fnamemodify(data.file, ":h"))
-    vim.cmd("Neotree show")
+    local path = vim.fn.fnamemodify(data.file, ":h")
+    if vim.fn.isdirectory(path) == 1 then
+      vim.cmd("cd " .. path)
+      vim.cmd("Neotree show")
+    end
   end
 })
