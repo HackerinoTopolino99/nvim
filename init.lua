@@ -12,3 +12,12 @@ vim.api.nvim_create_autocmd("UiEnter", {
     end
   end
 })
+
+
+vim.g.linefly_options = {
+  tabline = true,
+  with_file_icon = true,
+  with_git_branch = true,
+  with_git_status = false,
+  with_diagnostic_status = true,
+}
