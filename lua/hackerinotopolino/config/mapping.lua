@@ -1,6 +1,17 @@
 -- Navigation between tabs
+vim.g.mapleader = " "
+
 vim.keymap.set("n", "<C-right>", "<cmd>tabnext<CR>")
 vim.keymap.set("n", "<C-Left>", "<cmd>tabprevious<CR>")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
 
-vim.keymap.set({"n","i"}, "<C-b>", "<cmd>Neotree toggle action=show<CR>")
-vim.keymap.set({"n", "i", "v"}, "<C-\\>", "<cmd>ToggleTerm<CR>")
+vim.keymap.set({ "n", "i" }, "<C-b>", "<cmd>Neotree toggle action=show<CR>")
+vim.keymap.set({ "n", "i", "v" }, "<C-\\>", "<cmd>ToggleTerm<CR>")
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
