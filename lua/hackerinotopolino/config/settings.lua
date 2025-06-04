@@ -1,6 +1,6 @@
 -- Misc options
 vim.opt.number = true
-vim.opt.mouse= "a"
+vim.opt.mouse = "a"
 vim.opt.title = true
 
 -- Split options
@@ -27,4 +27,3 @@ vim.opt.termguicolors = true
 
 -- Completion options
 vim.opt.completeopt = "noinsert,menuone,noselect"
-

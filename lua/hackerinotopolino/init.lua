@@ -42,6 +42,6 @@ vim.g.linefly_options = {
   tabline = true,
   with_file_icon = true,
   with_git_branch = true,
-  with_git_status = false,
+  with_git_status = true,
   with_diagnostic_status = true,
 }
