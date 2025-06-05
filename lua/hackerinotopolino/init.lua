@@ -2,7 +2,7 @@ require("hackerinotopolino.config.mapping")
 require("hackerinotopolino.config.settings")
 require("hackerinotopolino.config.lazy")
 
-vim.cmd [[colorscheme nightfly]]
+vim.cmd([[colorscheme nightfly]])
 
 vim.api.nvim_create_autocmd("UiEnter", {
   callback = function(data)
@@ -11,9 +11,8 @@ vim.api.nvim_create_autocmd("UiEnter", {
       vim.cmd("cd " .. path)
       vim.cmd("Neotree show")
     end
-  end
+  end,
 })
-
 
 vim.g.linefly_options = {
   tabline = true,
