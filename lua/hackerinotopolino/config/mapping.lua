@@ -19,7 +19,7 @@ vim.keymap.set({ "n", "v", "i" }, "<C-b>", "<cmd>Neotree toggle action=show<CR>"
 vim.keymap.set({ "n" }, "<leader>e", "<cmd>NeoTree reveal<CR>")
 
 -- ToggleTerm Mappings
-vim.keymap.set({ "n", "i", "v" }, "<leader>t", "<cmd>ToggleTerm<CR>")
+vim.keymap.set({ "n", "v" }, "<leader>t", "<cmd>ToggleTerm<CR>")
 
 -- LSP Mappings
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
