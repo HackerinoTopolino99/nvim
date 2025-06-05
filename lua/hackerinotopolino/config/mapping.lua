@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- NeoTree Mappings
 vim.keymap.set({ "n", "v", "i" }, "<C-b>", "<cmd>Neotree toggle action=show<CR>")
-vim.keymap.set({ "n" }, "<leader>e", "<cmd>NeoTree reveal<CR>")
+vim.keymap.set({ "n" }, "<leader>e", "<cmd>Neotree reveal<CR>")
 
 -- ToggleTerm Mappings
 vim.keymap.set({ "n", "v" }, "<leader>t", "<cmd>ToggleTerm<CR>")
