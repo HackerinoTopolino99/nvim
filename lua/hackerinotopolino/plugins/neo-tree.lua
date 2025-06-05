@@ -12,7 +12,7 @@ return {
     require("neo-tree").setup({
       close_if_last_window = false,
       popup_border_style = "NC",
-      enable_diagnostics = true,
+      enable_diagnostics = false,
       sort_case_insensitive = true,
       default_component_configs = {
         file_size = {
@@ -35,6 +35,54 @@ return {
       window = {
         position = "left",
         width = 40,
+        mapping_options = {
+          noremap = true,
+          nowait = true,
+        },
+        mappings = {
+          ["<space>"] = {
+            "toggle_node",
+            nowait = false,
+            config = { show_help = true },
+          },
+          ["<2-LeftMouse>"] = "open",
+          ["<cr>"] = "open_drop",
+          ["<esc>"] = "cancel",
+          ["l"] = "focus_preview",
+          ["S"] = "open_split",
+          ["s"] = "open_vsplit",
+          ["t"] = "open_tab_drop",
+          ["w"] = "open_with_window_picker",
+          ["C"] = "close_node",
+          ["z"] = "close_all_nodes",
+          ["Z"] = "expand_all_nodes",
+          ["a"] = {
+            "add",
+            config = {
+              show_path = "none",
+            },
+          },
+          ["A"] = "add_directory",
+          ["d"] = "delete",
+          ["r"] = "rename",
+          ["b"] = "rename_basename",
+          ["y"] = "copy_to_clipboard",
+          ["x"] = "cut_to_clipboard",
+          ["p"] = "paste_from_clipboard",
+          ["c"] = {
+            "copy",
+            config = {
+              show_path = "absolute",
+            },
+          },
+          ["m"] = "move",
+          ["q"] = "close_window",
+          ["R"] = "refresh",
+          ["?"] = "show_help",
+          ["<"] = "prev_source",
+          [">"] = "next_source",
+          ["i"] = "show_file_details",
+        },
       },
       sources = {
         "filesystem",
@@ -47,13 +95,13 @@ return {
         status_line = false,
         sources = {
           {
-            source = "filesystem", -- string
+            source = "filesystem",
           },
           {
-            source = "buffers", -- string
+            source = "buffers",
           },
           {
-            source = "git_status", -- string
+            source = "git_status",
           },
           {
             source = "remote",
@@ -65,12 +113,10 @@ return {
           visible = false,
           hide_dotfiles = true,
           hide_gitignored = false,
-          always_show = {
-            ".git",
-            ".gitignore",
-          },
+          always_show = {},
           always_show_by_pattern = {
             ".env*",
+            ".git*",
           },
         },
       },
