@@ -57,10 +57,10 @@ return {
         lualine_b = {
           {
             "tabs",
-            tab_max_length = 40,
-            max_length = vim.o.columns / 3,
+            tab_max_length = 90,
+            max_length = vim.o.columns,
             mode = 1,
-            path = 0,
+            path = 1,
             use_mode_colors = false,
 
             -- Not working
@@ -94,7 +94,7 @@ return {
       extensions = {
         "lazy",
         "neo-tree",
-        "toggleterm"
+        "toggleterm",
       },
     })
   end,
