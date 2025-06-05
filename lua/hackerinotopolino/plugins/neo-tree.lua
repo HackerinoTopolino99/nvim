@@ -10,9 +10,9 @@ return {
   lazy = false,
   config = function()
     require("neo-tree").setup({
-      close_if_last_window = true,
+      close_if_last_window = false,
       popup_border_style = "NC",
-      enable_diagnostics = false,
+      enable_diagnostics = true,
       sort_case_insensitive = true,
       default_component_configs = {
         file_size = {
