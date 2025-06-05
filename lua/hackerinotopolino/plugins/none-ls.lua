@@ -1,5 +1,8 @@
 return {
 	"nvimtools/none-ls.nvim",
+  dependencies = {
+    "nvimtools/none-ls-extras.nvim",
+    },
 	config = function()
 		local null_ls = require("null-ls")
 		null_ls.setup({
@@ -7,8 +10,8 @@ return {
 				null_ls.builtins.formatting.isort,
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.packer,
-				null_ls.builtins.diagnostics.pylint,
-				null_ls.builtins.formatting.yapf,
+        require("none-ls.formatting.autopep8"),
+        require("none-ls.diagnostics.flake8"),
 			},
 		})
 	end,
