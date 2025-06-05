@@ -11,8 +11,18 @@ return {
 
     local lspconfig = require("lspconfig")
 
-    lspconfig.pyright.setup({
+    lspconfig.ansiblels.setup({
       capabilities = capabilities,
+      settings = {
+        ansible = {
+          ansible = {
+            path = "ansible",
+          },
+          ansibleLint = {
+            path = "ansible-lint",
+          },
+        },
+      },
     })
 
     lspconfig.lua_ls.setup({
@@ -22,6 +32,22 @@ return {
           diagnostics = {
             globals = { "vim", "it", "describe", "before_each", "after_each" },
           },
+        },
+      },
+    })
+
+    lspconfig.pyright.setup({
+      capabilities = capabilities,
+    })
+
+    lspconfig.terraformls.setup({
+      capabilities = capabilities,
+      settings = {
+        terraform = {
+          path = "terraform",
+        },
+        terraform_lsp = {
+          path = "terraform-lsp",
         },
       },
     })
