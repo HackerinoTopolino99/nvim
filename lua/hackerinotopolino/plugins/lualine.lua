@@ -26,21 +26,19 @@ return {
         lualine_b = {
           "branch",
           {
-            "diff",
-            colored = true,
-            diff_color = {
-              added = "LuaLineDiffAdd",
-              modified = "LuaLineDiffModified",
-              removed = "LuaLineDiffDelete",
-            },
-            symbols = { added = '+', modified = '~', removed = '-'},
-            source = nil,
+            "diagnostics",
+            sources = { "nvim_lsp", "nvim_diagnostic" },
+            sections = { "error", "warn", "info", "hint" },
+
+            diagnostics_color = {},
+            symbols = { error = "E", warn = "W", info = "I", hint = "H" },
+            update_in_insert = true,
+            always_visibile = false,
           },
-          "diagnostics",
         },
-        lualine_c = { "filename" },
-        lualine_x = { "fileformat", "filetype" },
-        lualine_y = { "tabs" },
+        lualine_c = { "filename", "filetype", "fileformat" },
+        lualine_x = { "searchcount" },
+        lualine_y = {},
         lualine_z = { "location" },
       },
       inactive_sections = {
@@ -51,10 +49,52 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
-      tabline = {},
+      tabline = {
+        lualine_a = {
+          "branch",
+        },
+        lualine_b = {
+          {
+            "tabs",
+            tab_max_length = 40,
+            max_length = vim.o.columns / 3,
+            mode = 1,
+            path = 0,
+            use_mode_colors = false,
+
+            -- Not working
+            -- tabs_color = {
+            --  active = "lualine_{section}_normal",
+            --  inactive = "lualine_{section}_inactive",
+            --},
+
+            show_modified_status = true,
+            symbols = {
+              modified = "[+]",
+            },
+
+            fmt = function(name, context)
+              local buflist = vim.fn.tabpagebuflist(context.tabnr)
+              local winnr = vim.fn.tabpagewinnr(context.tabnr)
+              local bufnr = buflist[winnr]
+              local mod = vim.fn.getbufvar(bufnr, "&mod")
+
+              return name .. (mod == 1 and " +" or "")
+            end,
+          },
+        },
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+      },
       winbar = {},
       inactive_winbar = {},
-      extensions = {},
+      extensions = {
+        "lazy",
+        "neo-tree",
+        "toggleterm"
+      },
     })
   end,
 }
