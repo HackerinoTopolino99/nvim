@@ -25,6 +25,7 @@ return {
         lualine_a = { "mode" },
         lualine_b = {
           "branch",
+          "swenv",
           {
             "diagnostics",
             sources = { "nvim_lsp", "nvim_diagnostic" },
