@@ -34,7 +34,7 @@ return {
 					},
 				},
 			},
-			filetypes = { "yaml.ansible" },
+			filetypes = { "yaml.ansible", "yaml", "yml" },
 			root_dir = lspconfig.util.root_pattern("ansible.cfg", ".git"),
 			single_file_support = true,
 		})
