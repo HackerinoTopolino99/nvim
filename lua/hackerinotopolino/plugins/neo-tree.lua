@@ -49,7 +49,7 @@ return {
         ["l"] = "focus_preview",
         ["S"] = "open_split",
         ["s"] = "open_vsplit",
-        -- ["t"] = "open_tab_drop",
+
         ["t"] = function(state)
           local node = state.tree:get_node()
           if node.type == "file" then
@@ -122,6 +122,68 @@ return {
         always_show_by_pattern = {
           ".env*",
           ".git*",
+        },
+        window = {
+          mappings = {
+            ["<bs>"] = "navigate_up",
+            ["."] = "set_root",
+            ["H"] = "toggle_hidden",
+            ["/"] = "fuzzy_finder",
+            ["D"] = "fuzzy_finder_directory",
+            ["#"] = "fuzzy_sorter",
+
+            ["f"] = "filter_on_submit",
+            ["<c-x>"] = "clear_filter",
+            ["[g"] = "prev_git_modified",
+            ["]g"] = "next_git_modified",
+            ["o"] = {
+              "show_help",
+              nowait = false,
+              config = { title = "Order by", prefix_key = "o" },
+            },
+            ["oc"] = { "order_by_created", nowait = false },
+            ["od"] = { "order_by_diagnostics", nowait = false },
+            ["og"] = { "order_by_git_status", nowait = false },
+            ["om"] = { "order_by_modified", nowait = false },
+            ["on"] = { "order_by_name", nowait = false },
+            ["os"] = { "order_by_size", nowait = false },
+            ["ot"] = { "order_by_type", nowait = false },
+          },
+          fuzzy_finder_mappings = {
+            ["<down>"] = "move_cursor_down",
+            ["<C-n>"] = "move_cursor_down",
+            ["<up>"] = "move_cursor_up",
+            ["<C-p>"] = "move_cursor_up",
+            ["<esc>"] = "close",
+          },
+        },
+        commands = {},
+      },
+    },
+    buffers = {
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = false,
+      },
+      group_empty_dirs = true,
+      show_unloaded = true,
+      window = {
+        mappings = {
+          ["d"] = "buffer_delete",
+          ["bd"] = "buffer_delete",
+          ["<bs>"] = "navigate_up",
+          ["."] = "set_root",
+          ["o"] = {
+            "show_help",
+            nowait = false,
+            config = { title = "Order by", prefix_key = "o" },
+          },
+          ["oc"] = { "order_by_created", nowait = false },
+          ["od"] = { "order_by_diagnostics", nowait = false },
+          ["om"] = { "order_by_modified", nowait = false },
+          ["on"] = { "order_by_name", nowait = false },
+          ["os"] = { "order_by_size", nowait = false },
+          ["ot"] = { "order_by_type", nowait = false },
         },
       },
     },
