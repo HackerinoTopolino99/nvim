@@ -16,9 +16,6 @@ return {
 			cmd = { "ansible-language-server", "--stdio" },
 			settings = {
 				ansible = {
-					python = {
-						interpreterPath = "python3",
-					},
 					ansible = {
 						path = "ansible",
 					},
@@ -27,11 +24,15 @@ return {
 					},
 					validation = {
 						enabled = true,
-						ling = {
+						lint = {
 							enabled = true,
 							path = "ansible-lint",
 						},
 					},
+          completion = {
+            provideRedirectModules = true,
+            provideModuleOptionAliases = true
+          },
 				},
 			},
 			filetypes = { "yaml.ansible", "yaml", "yml" },
