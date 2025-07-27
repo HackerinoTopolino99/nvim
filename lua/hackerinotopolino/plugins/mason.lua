@@ -14,7 +14,9 @@ return {
 					"bashls",
 					"docker_compose_language_service",
 					"lua_ls",
+          "nginx_language_server",
 					"pyright",
+          "systemd_ls",
 					"terraformls",
 				},
 			})
