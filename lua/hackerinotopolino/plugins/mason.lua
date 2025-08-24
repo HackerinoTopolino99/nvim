@@ -12,12 +12,15 @@ return {
 				ensure_installed = {
 					"ansiblels",
 					"bashls",
-					"docker_compose_language_service",
+					"docker_language_server",
+          "gitlab_ci_ls",
+          "gh_actions_ls",
+          "ltex_plus",
 					"lua_ls",
           "nginx_language_server",
 					"pyright",
           "systemd_ls",
-					"terraformls",
+          "tofu_ls",
 				},
 			})
 		end,
