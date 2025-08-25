@@ -21,7 +21,33 @@ return {
 					"pyright",
 					"systemd_ls",
 					"tofu_ls",
+					"yamlls",
 				},
+			})
+		end,
+	},
+	{
+		"jay-babu/mason-null-ls.nvim",
+		config = function()
+			require("mason-null-ls").setup({
+				ensure_installed = {
+					"actionlint",
+					"ansible-lint",
+					"autopep8",
+					"flake8",
+					"hclfmt",
+					"nginx-config-formatter",
+					"opentofu_fmt",
+					"opentofu_validate",
+					"packer",
+					"shfmt",
+					"stylua",
+					"tflint",
+					"tfsec",
+					"yamllint",
+				},
+				automatic_installation = false,
+				handlers = {},
 			})
 		end,
 	},
