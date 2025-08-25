@@ -10,6 +10,7 @@ return {
         null_ls.builtins.diagnostics.actionlint,
         null_ls.builtins.diagnostics.ansiblelint,
         null_ls.builtins.diagnostics.opentofu_validate,
+        null_ls.builtins.diagnostics.yamllint,
         null_ls.builtins.formatting.hclfmt,
         null_ls.builtins.formatting.opentofu_fmt,
         null_ls.builtins.formatting.packer,
