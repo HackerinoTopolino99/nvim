@@ -29,10 +29,6 @@ return {
       capabilities = capabilities,
     })
 
-    lspconfig.docker_language_server.setup({
-      capabilities = capabilities,
-    })
-
     lspconfig.gitlab_ci_ls.setup({
       capabilities = capabilities,
     })
@@ -62,10 +58,6 @@ return {
     })
 
     lspconfig.systemd_ls.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.tofu_ls.setup({
       capabilities = capabilities,
     })
 
