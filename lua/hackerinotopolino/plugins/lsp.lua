@@ -43,6 +43,17 @@ return {
 
     lspconfig.ltex_plus.setup({
       capabilities = capabilities,
+      settings = {
+        ltex = {
+          language = "it-IT",
+        },
+      },
+    })
+
+    lspconfig.lemminx.setup({
+      capabilities = capabilities,
+      filetypes = { "xml" },
+      single_file_support = true,
     })
 
     lspconfig.lua_ls.setup({
@@ -55,6 +66,24 @@ return {
 
     lspconfig.pyright.setup({
       capabilities = capabilities,
+      filetypes = { "python" },
+      root_dir = lspconfig.util.root_pattern(
+        "requirements.txt",
+        "pyproject.toml",
+        "setup.py",
+        "setup.cfg",
+        "Pipfile",
+        "pyrightconfig.json"
+      ),
+      single_file_support = true,
+      settings = {
+        python = {
+          analysis = {
+            diagnosticMode = "workspace",
+          },
+          venvPath = "./.venv",
+        },
+      },
     })
 
     lspconfig.systemd_ls.setup({
