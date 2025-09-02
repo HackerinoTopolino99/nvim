@@ -16,8 +16,9 @@ return {
         null_ls.builtins.formatting.packer,
         null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.stylua,
-        require("none-ls.formatting.autopep8"),
         require("none-ls.diagnostics.flake8"),
+        require("none-ls.formatting.autopep8"),
+        require("none-ls.formatting.tex_fmt"),
       },
     })
   end,
