@@ -90,10 +90,6 @@ return {
       capabilities = capabilities,
     })
 
-    lspconfig.tombi.setup({
-      capabilities = capabilities,
-    })
-
     lspconfig.yamlls.setup({
       capabilities = capabilities,
       filetypes = { "yaml" },
