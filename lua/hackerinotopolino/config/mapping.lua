@@ -3,8 +3,8 @@ vim.g.mapleader = " "
 -- Navigation Mappings
 vim.keymap.set({ "n", "i", "v" }, "<C-right>", "<cmd>tabnext<CR>")
 vim.keymap.set({ "n", "i", "v" }, "<C-Left>", "<cmd>tabprevious<CR>")
-vim.keymap.set({ "n", "i", "v" }, "<C-d>", "<C-d>zz")
-vim.keymap.set({ "n", "i", "v" }, "<C-u>", "<C-u>zz")
+vim.keymap.set({ "n", "v" }, "<C-d>", "<C-d>zz")
+vim.keymap.set({ "n", "v" }, "<C-u>", "<C-u>zz")
 vim.keymap.set({ "n" }, "n", "nzz")
 vim.keymap.set({ "n" }, "N", "Nzz")
 
