@@ -20,7 +20,10 @@ return {
         "inventory.yml",
         "inventory.yaml",
         "inventory.ini",
-        "inventory.example"
+        "inventory.example",
+        "inventory.yml.example",
+        "site.yml",
+        "main.yml"
       ),
       single_file_support = false,
     })
