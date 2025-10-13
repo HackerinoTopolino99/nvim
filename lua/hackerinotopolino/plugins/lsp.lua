@@ -18,8 +18,6 @@ return {
         "ansible.cfg",
         "inventory",
         "inventory.yml",
-        "inventory.yaml",
-        "inventory.ini",
         "inventory.example",
         "inventory.yml.example",
         "site.yml",
