@@ -9,12 +9,13 @@ return {
       cmp_lsp.default_capabilities()
     )
 
-    local lspconfig = require("lspconfig")
+    vim.lsp.config('*', {
+      capabilities = capabilities
+    })
 
-    lspconfig.ansiblels.setup({
-      capabilities = capabilities,
+    vim.lsp.config.ansiblels = {
       filetypes = { "yaml" },
-      root_dir = lspconfig.util.root_pattern(
+      root_markers = {
         "ansible.cfg",
         "inventory",
         "inventory.yml",
@@ -22,60 +23,43 @@ return {
         "inventory.yml.example",
         "site.yml",
         "main.yml"
-      ),
+      },
       single_file_support = false,
-    })
+    }
 
-    lspconfig.bashls.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.config.gitlab_ci_ls = {
+      single_file_support = false
+    }
 
-    lspconfig.gitlab_ci_ls.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.gh_actions_ls.setup({
-      capabilities = capabilities,
-
+    vim.lsp.config.gh_actions_ls = {
       filetypes = { "yaml.github" },
-      root_dir = lspconfig.util.root_pattern(".github/workflows"),
+      root_markers = {".github/workflows"},
       single_file_support = false,
-    })
+    }
 
-    lspconfig.ltex_plus.setup({
-      capabilities = capabilities,
+    vim.lsp.config.ltex_plus = {
       settings = {
         ltex = {
           language = "it-IT",
         },
       },
-    })
+    }
 
-    lspconfig.lemminx.setup({
-      capabilities = capabilities,
+    vim.lsp.config.lemminx = {
       filetypes = { "xml" },
       single_file_support = true,
-    })
+    }
 
-    lspconfig.lua_ls.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.nginx_language_server.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.pyright.setup({
-      capabilities = capabilities,
+    vim.lsp.config.pyright = {
       filetypes = { "python" },
-      root_dir = lspconfig.util.root_pattern(
+      root_markers = {
         "requirements.txt",
         "pyproject.toml",
         "setup.py",
         "setup.cfg",
         "Pipfile",
         "pyrightconfig.json"
-      ),
+      },
       single_file_support = true,
       settings = {
         python = {
@@ -85,17 +69,12 @@ return {
           venvPath = "./.venv",
         },
       },
-    })
+    }
 
-    lspconfig.systemd_ls.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.yamlls.setup({
-      capabilities = capabilities,
+    vim.lsp.config.yamlls = {
       filetypes = { "yaml" },
       single_file_support = true,
-    })
+    }
 
     vim.diagnostic.config({
       update_in_insert = true,
